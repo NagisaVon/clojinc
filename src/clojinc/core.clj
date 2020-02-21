@@ -247,10 +247,34 @@ my-favorite-number
 
 ;; Problem Set 1: 
 ;; - Write an expression that calculates the number of seconds in a year.
+
+(def year 2000)
+
+(if  (and (= (mod year 4) 0) (not= (mod year 100) 0))
+  (* 366 24 60 60)
+  (* 365 24 60 60) )
+
+
 ;; - Define diameter to be some number and write expression that calculates the area
 ;;   of a circle with that diameter.
 ;; - Write arithmetic expressions for other formulas that you remember from high school
 ;;   (or look some up if you don't remember any!).
+
+[1 2]
+(def nums (take 100(iterate inc 1)))
+
+(loop [iter 1
+       acc 0]
+  (if (> iter 100)
+    (println acc)
+    (recur (inc iter) (+ acc iter))
+    )
+  )
+
+(if (< year 3000)
+  (recur (inc year))
+  (println year) )
+
 
 
 
